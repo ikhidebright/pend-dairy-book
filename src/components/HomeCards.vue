@@ -1,19 +1,16 @@
 <template>
   <v-card
-    color="red"
+    color="#B71C1CFF"
     dark
-    img="https://www.lifewire.com/thmb/TGYn5bhIX6SxfCz2nkFfUDqqFFo=/4592x3056/filters:fill(auto,1)/s-o-c-i-a-l-c-u-t-hCjo_bIkVig-unsplash-6ee2f8f1046649539d03bc0ebfa73769.jpg"
     flat
     tile
   >
     <v-window v-model="onboarding">
       <v-window-item
-        v-for="n in length"
-        :key="`card-${n}`"
       >
         <v-card
           color="transparent"
-          height="540"
+          height="547"
           flat
         >
           <v-row
@@ -22,8 +19,46 @@
             justify="center"
             tag="v-card-text" 
           >
-            Transparent themed, for background-imaged slides. Background color black added for demonstration purposes.
-          </v-row>
+           <p> Welcome</p> 
+           <br>
+           <h2>Pend</h2>
+            </v-row>
+        </v-card>
+      </v-window-item>
+
+      <v-window-item
+      >
+        <v-card
+          color="transparent"
+          height="547"
+          flat
+        >
+          <v-row
+            class="fill-height"
+            align="center"
+            justify="center"
+            tag="v-card-text" 
+          >
+            Welcome again  
+            </v-row>
+        </v-card>
+      </v-window-item>
+
+      <v-window-item
+      >
+        <v-card
+          color="transparent"
+          height="547"
+          flat
+        >
+          <v-row
+            class="fill-height"
+            align="center"
+            justify="center"
+            tag="v-card-text" 
+          >
+            Welcome once again
+            </v-row>
         </v-card>
       </v-window-item>
     </v-window>
@@ -62,25 +97,25 @@
       </v-item-group>
       </v-row>
       
-<v-row class='mx-auto'>
- <v-col>
+<v-row class='' no-gutters>
+ <v-col class="">
           <v-btn
-          color="#001F90"
+          color="#E20A0AFF"
           dark
           tile
-          large
+          x-large
           block
           >
           Log in
           </v-btn>
           </v-col>
 
-           <v-col>
+           <v-col class="">
           <v-btn
-          color="#001F90"
+          color="#E20A0AFF"
           dark
           tile
-          large
+          x-large
           block
           >
           Sign up
