@@ -12,7 +12,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/pens',
+    path: '/pad',
     name: 'Notepad',
     component: Notepad
   },

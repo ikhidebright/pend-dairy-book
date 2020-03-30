@@ -33,14 +33,32 @@
           height="547"
           flat
         >
+        <v-container>
           <v-row
-            class="fill-height"
+            no-gutters
+            class="fill-height mt-12"
             align="center"
             justify="center"
             tag="v-card-text" 
           >
-            Welcome again  
+          <v-col
+          class="mt-9"
+          sm="3"
+          md="4"
+          >
+          <img :src="require('@/assets/pic.jpg')"/>
+          </v-col>
+          <v-col
+          class="mt-9"
+          sm="3"
+          md="6"
+          >
+            <h2 class='head'>Your Private Journals</h2>
+
+            <p> Create & customize journals for everything in your life</p>
+            </v-col>
             </v-row>
+            </v-container>
         </v-card>
       </v-window-item>
 
@@ -54,18 +72,20 @@
         <v-container>
           <v-row
             no-gutters
-            class="fill-height"
+            class="fill-height mt-12"
             align="center"
             justify="center"
             tag="v-card-text" 
           >
           <v-col
+          class="mt-9"
           sm="3"
           md="4"
           >
-          <img :src="require('@/assets/pic.jpg')" />
+          <img :src="require('@/assets/pic.jpg')"/>
           </v-col>
           <v-col
+          class="mt-9"
           sm="3"
           md="6"
           >
@@ -179,7 +199,7 @@
 }
 
 p {
-    font-family: 'Merriweather';
+    font-family: 'Roboto';
     font-size: 1rem;
 }
 </style>
