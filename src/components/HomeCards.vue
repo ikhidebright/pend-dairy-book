@@ -13,7 +13,8 @@
       >
         <v-card
           color="transparent"
-          height="532"
+          height="540"
+          flat
         >
           <v-row
             class="fill-height"
@@ -61,7 +62,7 @@
       </v-item-group>
       </v-row>
       
-<v-row>
+<v-row class='mx-auto'>
  <v-col>
           <v-btn
           color="#001F90"
