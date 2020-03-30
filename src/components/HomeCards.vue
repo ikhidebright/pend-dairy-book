@@ -51,14 +51,30 @@
           height="547"
           flat
         >
+        <v-container>
           <v-row
+            no-gutters
             class="fill-height"
             align="center"
             justify="center"
             tag="v-card-text" 
           >
-            Welcome once again
+          <v-col
+          sm="3"
+          md="4"
+          >
+          <img :src="require('@/assets/pic.jpg')" />
+          </v-col>
+          <v-col
+          sm="3"
+          md="6"
+          >
+            <h2 class='head'>Rich Entries</h2>
+
+            <p> Add photos and choose fonts to make your journals your own </p>
+            </v-col>
             </v-row>
+            </v-container>
         </v-card>
       </v-window-item>
     </v-window>
@@ -155,3 +171,15 @@
     },
   }
 </script>
+
+<style scoped>
+.head {
+    font-family: 'Fredoka One';
+    font-size: 2rem
+}
+
+p {
+    font-family: 'Merriweather';
+    font-size: 1rem;
+}
+</style>
