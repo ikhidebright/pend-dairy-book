@@ -30,14 +30,25 @@
                 type="password"
                 required></v-text-field>
               </v-col>
+               <v-col cols="12">
+              <v-btn
+          color="#E20A0AFF"
+          dark
+          tile
+          x-large
+          block
+          v-on="on">
+          Log in
+          </v-btn>
+          </v-col>
             </v-row>
           </v-container>
         </v-card-text>
-        <v-card-actions>
+      <!--  <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" text @click="dialog = false">Close</v-btn>
           <v-btn color="blue darken-1" text @click="dialog = false">Save</v-btn>
-        </v-card-actions>
+        </v-card-actions> -->
       </v-card>
     </v-dialog>
   </v-row>
