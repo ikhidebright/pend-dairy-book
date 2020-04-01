@@ -149,8 +149,6 @@
           <Register />
           </v-col>
           </v-row>
-
-
     <!--  <v-btn
         text
         @click="next"
