@@ -13,16 +13,24 @@
           height="547"
           flat
         >
+        <v-container>
           <v-row
-            class="fill-height"
+            no-gutters
+            class="fill-height mt-12"
             align="center"
             justify="center"
             tag="v-card-text" 
           >
-           <p> Welcome</p> 
-           <br>
-           <h2>Pend</h2>
+          <v-col
+          class="mt-12"
+          sm="3"
+          md="3"
+          >
+         <!--   <p class='gr'>Welcome to</p> -->
+            <h2 class='logo mt-12'>Pend</h2>
+            </v-col>
             </v-row>
+            </v-container>
         </v-card>
       </v-window-item>
 
@@ -135,27 +143,10 @@
       
 <v-row class='' no-gutters>
  <v-col class="">
-          <v-btn
-          color="#E20A0AFF"
-          dark
-          tile
-          x-large
-          block
-          >
-          Log in
-          </v-btn>
+          <Login />
           </v-col>
-
            <v-col class="">
-          <v-btn
-          color="#E20A0AFF"
-          dark
-          tile
-          x-large
-          block
-          >
-          Sign up
-          </v-btn>
+          <Register />
           </v-col>
           </v-row>
 
@@ -171,11 +162,22 @@
 </template>
 
 <script>
+import Register from './Register'
+import Login from './Login'
+
   export default {
     data: () => ({
       length: 3,
       onboarding: 0,
+      autorun: true
     }),
+
+    created () {
+      setInterval(() => {
+        if (!this.autorun) return
+        if (++this.onboarding >= this.length) this.onboarding = 0
+      }, 4000)
+    },
 
     methods: {
       next () {
@@ -189,6 +191,10 @@
           : this.onboarding - 1
       },
     },
+    components: {
+      Register,
+      Login
+    }
   }
 </script>
 
@@ -198,8 +204,17 @@
     font-size: 2rem
 }
 
+.logo {
+    font-family: 'Pacifico'; 
+    font-size: 8rem
+}
+
 p {
     font-family: 'Roboto';
     font-size: 1rem;
+}
+
+.gr {
+  text-align: center
 }
 </style>

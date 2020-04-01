@@ -70,9 +70,26 @@
         </v-list>
 
         <v-divider></v-divider>
-        <v-btn text large tile block to="/dashboard"><v-icon>mdi-lead-pencil</v-icon>Manage Venue</v-btn>
-        <v-btn text large block to="/bookings"><v-icon>mdi-history</v-icon>Bookings</v-btn>
-        <v-btn text large block><v-icon>mdi-power-plug-off</v-icon>Sign out</v-btn>
+        <v-list
+        nav
+        dense
+      >
+        <v-list-item-group v-model="item" color="primary">
+          <v-list-item
+            v-for="(item, i) in items"
+            :key="i"
+          >
+            <v-list-item-icon>
+              <v-icon v-text="item.icon"></v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title v-text="item.text"></v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+       
         <v-list>
           <!-- <v-list-item>
             <v-list-item-action>
@@ -151,6 +168,16 @@
   export default {
     data: () => ({
       drawer: false,
+      item: 0,
+      items: [
+        { text: 'My Files', icon: 'mdi-folder' },
+        { text: 'Shared with me', icon: 'mdi-account-multiple' },
+        { text: 'Starred', icon: 'mdi-star' },
+        { text: 'Recent', icon: 'mdi-history' },
+        { text: 'Offline', icon: 'mdi-check-circle' },
+        { text: 'Uploads', icon: 'mdi-upload' },
+        { text: 'Backups', icon: 'mdi-cloud-upload' },
+      ],
     }),
   }
 </script>

@@ -1,24 +1,23 @@
 <template>
   <div class="about">
   <Head />
+  <Pen />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Head from '@/components/Head.vue'
+import Pen from '@/components/Pen.vue'
 
 export default {
   name: 'Home',
   components: {
-   Head
+   Head,
+   Pen
   }
 }
 </script>
 
-
 <style scoped>
-.about {
-  background-color: #f1f1f1
-}
 </style>
