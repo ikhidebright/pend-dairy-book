@@ -143,10 +143,26 @@
       
 <v-row class='' no-gutters>
  <v-col class="">
-          <Login />
+          <v-btn
+          color="#E20A0AFF"
+          dark
+          tile
+          x-large
+          block
+          to="/login">
+          Log in
+          </v-btn>
           </v-col>
            <v-col class="">
-          <Register />
+          <v-btn
+          color="#E20A0AFF"
+          dark
+          tile
+          x-large
+          block
+          to="/register">
+          Sign up
+          </v-btn>
           </v-col>
           </v-row>
     <!--  <v-btn
@@ -160,8 +176,6 @@
 </template>
 
 <script>
-import Register from './Register'
-import Login from './Login'
 
   export default {
     data: () => ({
@@ -190,8 +204,6 @@ import Login from './Login'
       },
     },
     components: {
-      Register,
-      Login
     }
   }
 </script>

@@ -1,18 +1,12 @@
 <template>
+<div>
+<Head />
   <v-row justify="center">
-    <v-dialog v-model="dialog" max-width="500px">
-      <template v-slot:activator="{ on }">
-        <v-btn
-          color="#E20A0AFF"
-          dark
-          tile
-          x-large
-          block
-          v-on="on">
-          Log in
-          </v-btn>
-      </template>
-      <v-card>
+      <v-card 
+      tile
+      dense
+      class='mt-5'
+      >
         <v-card-title>
           <span class="headline">Login</span>
         </v-card-title>
@@ -21,12 +15,16 @@
             <v-row>
               <v-col cols="12">
                 <v-text-field
-                label="Email or Username" 
+                v-model='email'
+                label="Email" 
+                outlined
                 required></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field
+                v-model='password'
                 label="Password"
+                outlined
                 type="password"
                 required></v-text-field>
               </v-col>
@@ -37,6 +35,7 @@
           tile
           x-large
           block
+          @click='login'
           v-on="on">
           Log in
           </v-btn>
@@ -44,20 +43,35 @@
             </v-row>
           </v-container>
         </v-card-text>
-      <!--  <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="dialog = false">Close</v-btn>
-          <v-btn color="blue darken-1" text @click="dialog = false">Save</v-btn>
-        </v-card-actions> -->
       </v-card>
-    </v-dialog>
   </v-row>
+  </div>
 </template>
 
 <script>
+import axios from 'axios'
+import Head from '@/components/Head'
+
   export default {
+    components: {
+      Head
+    },
     data: () => ({
-      dialog: false,
+      email: null,
+      password: null
     }),
+    methods: {
+      login () {
+        axios.post("http://localhost:3000/login", {
+          email: this.email,
+          password: this.password
+        })
+        .then((res) => {
+          console.log(res)
+          this.$store.commit('setUser', res.data.result)
+          this.$router.push({name: 'Pens'})
+        })
+      },
+    }
   }
 </script>

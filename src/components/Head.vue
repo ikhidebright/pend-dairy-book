@@ -8,7 +8,7 @@
     >
 
 
-      <v-toolbar-title class='logo mr-12'>Pend</v-toolbar-title>
+      <v-toolbar-title class='logo mr-12' to='/'>Pend</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
