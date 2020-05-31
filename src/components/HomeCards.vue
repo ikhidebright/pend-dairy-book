@@ -1,6 +1,8 @@
 <template>
+<div class=""
   <v-card
     color="#B71C1CFF"
+    class="home"
     dark
     flat
     tile
@@ -10,7 +12,6 @@
       >
         <v-card
           color="transparent"
-          height="547"
           flat
         >
         <v-container>
@@ -25,8 +26,8 @@
           class="mt-12"
           sm="3"
           md="3"
+          xs="3"
           >
-         <!--   <p class='gr'>Welcome to</p> -->
             <h2 class='logo mt-12'>Pend</h2>
             </v-col>
             </v-row>
@@ -38,83 +39,42 @@
       >
         <v-card
           color="transparent"
-          height="547"
           flat
         >
         <v-container>
           <v-row
             no-gutters
             class="fill-height mt-12"
-            align="center"
-            justify="center"
             tag="v-card-text" 
           >
-          <v-col
-          class="mt-9"
-          sm="3"
-          md="4"
-          >
-          <img :src="require('@/assets/pic.jpg')"/>
-          </v-col>
-          <v-col
-          class="mt-9"
-          sm="3"
-          md="6"
-          >
+          <img :src="require('@/assets/pic.jpg')" class="img"/>
             <h2 class='head'>Your Private Journals</h2>
-
             <p> Create & customize journals for everything in your life</p>
-            </v-col>
             </v-row>
             </v-container>
         </v-card>
       </v-window-item>
-
       <v-window-item
       >
         <v-card
           color="transparent"
-          height="547"
           flat
         >
         <v-container>
           <v-row
             no-gutters
             class="fill-height mt-12"
-            align="center"
-            justify="center"
             tag="v-card-text" 
           >
-          <v-col
-          class="mt-9"
-          sm="3"
-          md="4"
-          >
-          <img :src="require('@/assets/pic.jpg')"/>
-          </v-col>
-          <v-col
-          class="mt-9"
-          sm="3"
-          md="6"
-          >
+          <img :src="require('@/assets/pic.jpg')" class="img"/>
             <h2 class='head'>Rich Entries</h2>
-
             <p> Add photos and choose fonts to make your journals your own </p>
-            </v-col>
             </v-row>
             </v-container>
         </v-card>
       </v-window-item>
-    </v-window>
-
-  <!--  <v-card-actions class="justify-space-between"> -->
-     <!-- <v-btn
-        text
-        @click="prev"
-      >
-        <v-icon>mdi-chevron-left</v-icon>
-      </v-btn> -->  
-      <v-row
+    </v-window> 
+     <!-- <v-row
             class="fill-height"
             align="center"
             justify="center"
@@ -139,40 +99,9 @@
           </v-btn>
         </v-item>
       </v-item-group>
-      </v-row>
-      
-<v-row class='' no-gutters>
- <v-col class="">
-          <v-btn
-          color="#E20A0AFF"
-          dark
-          tile
-          x-large
-          block
-          to="/login">
-          Log in
-          </v-btn>
-          </v-col>
-           <v-col class="">
-          <v-btn
-          color="#E20A0AFF"
-          dark
-          tile
-          x-large
-          block
-          to="/register">
-          Sign up
-          </v-btn>
-          </v-col>
-          </v-row>
-    <!--  <v-btn
-        text
-        @click="next"
-      >
-        <v-icon>mdi-chevron-right</v-icon>
-      </v-btn> -->
-   <!-- </v-card-actions> -->
+      </v-row>   -->  
   </v-card>
+  </div>
 </template>
 
 <script>
@@ -209,6 +138,15 @@
 </script>
 
 <style scoped>
+
+.home {
+  height: 92vh;
+}
+
+.img {
+  width: 70%
+}
+
 .head {
     font-family: 'Fredoka One';
     font-size: 2rem
