@@ -1,6 +1,9 @@
 <template>
   <div class="about">
   <Head />
+  <br>
+  <Pen />
+  <Pen />
   <Pen />
   </div>
 </template>

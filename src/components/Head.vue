@@ -1,190 +1,56 @@
 <template>
-<div class='head'>
-    <v-app-bar
-      color="#B71C1CFF"
-      flat
+  <nav>
+  <v-btn 
+      color='blue'
       dark
-      height = '60'
-    >
-
-
-      <v-toolbar-title class='logo mr-12' :to="`/`">Pend</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <!--<v-btn text class="hidden-sm-and-down mr-5" to='/'>
-      Login
+      icon
+      Small
+      @click="drawer = !drawer"
+      >
+        <v-icon>mdi-pencil</v-icon>
       </v-btn>
-
-      <v-btn text class="hidden-sm-and-down mr-5" to='/addvenue'>
-      List your venue
-      </v-btn> -->
-
-
-       <v-menu
-      v-model="menu"
-      :close-on-content-click="false"
-      open-on-hover
-      :nudge-width="200"
-      offset-x
-      transition="scale-transition"
-    >
-      <template v-slot:activator="{ on }">
-        
-          <v-avatar color="red"
-          dark
-          v-on="on">
-      <v-icon dark>mdi-account-circle</v-icon>
-    </v-avatar>
-
-    <!-- <v-avatar>
-      <img
-        src="https://cdn.vuetifyjs.com/images/john.jpg"
-        alt="John"
-      >
-    </v-avatar> -->
-      </template>
-
-      <v-card>
-        <v-list>
-          <v-list-item>
-            <v-list-item-avatar>
-              <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
-            </v-list-item-avatar>
-
-            <v-list-item-content>
-              <v-list-item-title>Ikhide Bright</v-list-item-title>
-              <!-- <v-list-item-subtitle>Founder of Vuetify.js</v-list-item-subtitle> -->
-            </v-list-item-content>
-
-            <v-list-item-action>
-              <!-- <v-btn
-                :class="fav ? 'red--text' : ''"
-                icon
-                @click="fav = !fav"
-              >
-                <v-icon>mdi-heart</v-icon>
-              </v-btn> -->
-            </v-list-item-action>
-          </v-list-item>
-        </v-list>
-
-        <v-divider></v-divider>
-        <v-list
-        nav
-        dense
-      >
-        <v-list-item-group v-model="item" color="primary">
-          <v-list-item
-            v-for="(item, i) in items"
-            :key="i"
-          >
-            <v-list-item-icon>
-              <v-icon v-text="item.icon"></v-icon>
-            </v-list-item-icon>
-
-            <v-list-item-content>
-              <v-list-item-title v-text="item.text"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-       
-        <v-list>
-          <!-- <v-list-item>
-            <v-list-item-action>
-              <v-switch v-model="message" color="purple"></v-switch>
-            </v-list-item-action>
-            <v-list-item-title>Enable messages</v-list-item-title>
-          </v-list-item> -->
-
-          <!-- <v-list-item>
-            <v-list-item-action>
-              <v-switch v-model="hints" color="#001F90"></v-switch>
-            </v-list-item-action>
-            <v-list-item-title>Enable Dark mode</v-list-item-title>
-          </v-list-item> -->
-        </v-list>
-      </v-card>
-    </v-menu>
-
-
-       <v-navigation-drawer
-      v-model="drawer"
-      absolute
-      temporary
-    >
-      <v-list
-        nav
-        dense
-      >
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
+    
+    <v-navigation-drawer v-model="drawer" app class="indigo" dark>
+      <v-layout column align-center>
+        <v-flex class="mt-5">
+          <v-avatar size="100">
+            <img src="/avatar-1.png" alt="" />
+          </v-avatar>
+          <p class="white--text subheading mt-1">The Net Ninja</p>
+        </v-flex>
+      </v-layout>
+      <v-list>
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          router
+          :to="item.route"
+          link
         >
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-home</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Home</v-list-item-title>
-          </v-list-item>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
 
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-account</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Account</v-list-item-title>
-          </v-list-item>
-
-        </v-list-item-group>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
-      <!-- <v-menu
-        left
-        bottom
-      >
-        <template v-slot:activator="{ on }">
-          <v-btn icon v-on="on">
-            <v-icon>mdi-dots-vertical</v-icon>
-          </v-btn>
-        </template>
-
-        <v-list>
-          <v-list-item
-            v-for="n in 5"
-            :key="n"
-            @click="() => {}"
-          >
-            <v-list-item-title>Option {{ n }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu> -->
-    </v-app-bar>
-    </div>
+  </nav>
 </template>
-
 <script>
-  export default {
-    data: () => ({
-      drawer: false,
-      item: 0,
-      items: [
-        { text: 'My Files', icon: 'mdi-folder' },
-        { text: 'Shared with me', icon: 'mdi-account-multiple' },
-        { text: 'Starred', icon: 'mdi-star' },
-        { text: 'Recent', icon: 'mdi-history' },
-        { text: 'Offline', icon: 'mdi-check-circle' },
-        { text: 'Uploads', icon: 'mdi-upload' },
-        { text: 'Backups', icon: 'mdi-cloud-upload' },
-      ],
-    }),
-  }
-</script>
 
-<style scoped>
-.logo {
-    font-family: 'Pacifico'; 
-    font-size: 2rem
-}
-</style>
+export default {
+  data() {
+    return {
+      drawer: false,
+      items: [
+        { title: 'Dashboard', icon: 'mdi-view-grid', route: '/dashboard' },
+        { title: 'My Projects', icon: 'mdi-folder', route: '/projects' },
+        { title: 'Team', icon: 'mdi-account', route: '/team' }
+      ]
+    };
+  },
+};
+</script>
