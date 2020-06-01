@@ -22,6 +22,7 @@
       type="email"
       prepend-inner-icon="mdi-email"
       dark
+      single-line
       required
     ></v-text-field>      
 <v-text-field
@@ -33,6 +34,7 @@
       :type="show1 ? 'text' : 'password'"
       color="#ffffff"
       @click:append="show1 = !show1"
+      single-line
       dark
       required
     ></v-text-field>
@@ -54,6 +56,12 @@
       LOGIN
     </v-btn>
     </v-form>
+  <router-link
+    to="recover"
+    class="mt-4"
+    >
+    Forgot Password?
+    </router-link> 
   </div>
     </v-container>
 </template>
@@ -95,6 +103,10 @@
 </script>
 
 <style>
+a {
+    color: #fff;
+}
+
 div.v-messages.theme--dark.error--text{
     color: #ffffff !important;
 }
