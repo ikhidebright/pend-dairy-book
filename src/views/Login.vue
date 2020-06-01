@@ -1,6 +1,12 @@
 <template>
 <v-container class="log">
 <div class="mt-12">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <span class="headline">
     </span>
     <v-form
@@ -83,9 +89,14 @@
   }
 </script>
 
-<style scoped>
-div.v-messages__wrapper div.v-messages__message, div.message-transition-enter-to{
+<style>
+div.v-messages.theme--dark.error--text{
     color: #ffffff !important;
+}
+
+.v-application .error--text {
+    color: #f1f1f1 !important;
+    caret-color: #ff5252 !important;
 }
 
 .log {
