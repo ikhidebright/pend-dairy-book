@@ -20,6 +20,7 @@
       label="Email Address"
       color="#ffffff"
       type="email"
+      prepend-inner-icon="mdi-email"
       dark
       required
     ></v-text-field>      
@@ -27,8 +28,11 @@
       v-model="password"
       :rules="passwordRules"
       label="Password"
-      type="password"
+      prepend-inner-icon="mdi-lock"
+      :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+      :type="show1 ? 'text' : 'password'"
       color="#ffffff"
+      @click:append="show1 = !show1"
       dark
       required
     ></v-text-field>
@@ -64,6 +68,7 @@
       email: null,
       password: null,
       valid: true,
+      show1: false,
       emailRules: [
         v => !!v || 'E-mail is required',
         v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
@@ -95,6 +100,11 @@ div.v-messages.theme--dark.error--text{
 }
 
 .v-application .error--text {
+    color: #f1f1f1 !important;
+    caret-color: #ff5252 !important;
+}
+
+.v-input__control {
     color: #f1f1f1 !important;
     caret-color: #ff5252 !important;
 }
