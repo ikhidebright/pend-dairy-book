@@ -9,12 +9,12 @@
       <v-spacer></v-spacer>
     <v-btn 
       color='blue'
+      class="mt-n3 mr-n3"
       dark
       icon
-      fab
-      Small
+      large
       >
-        <v-icon>mdi-pencil</v-icon>
+        <v-icon>mdi-pencil-circle</v-icon>
       </v-btn> 
     </v-card-title>
 
@@ -26,10 +26,9 @@
     <v-card-actions>
     <v-spacer></v-spacer>
      <v-btn 
-      color='blue'
+      color='pink'
       dark
       icon
-      fab
       Small
       >
       <v-icon>mdi-heart</v-icon>
@@ -38,7 +37,6 @@
       color='green'
       dark
       icon
-      fab
       Small
       >
         <v-icon>mdi-share-variant</v-icon>
@@ -48,7 +46,6 @@
       color='red'
       icon
       Small
-      fab
       >
         <v-icon>mdi-delete</v-icon>
       </v-btn>

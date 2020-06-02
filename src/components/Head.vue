@@ -4,6 +4,7 @@
       color='#B71C1CFF'
       dark
       icon
+      fab
       x-large
       @click="drawer = !drawer"
       >
