@@ -1,92 +1,152 @@
 <template>
-  <v-row justify="center">
-      <v-card>
-        <v-card-title>
-        <v-progress-linear
-        :active="loading"
-        :indeterminate="loading"
-        absolute
-        top
-        dark
-        height = '10'
-        color="red"
-      ></v-progress-linear>
-          <span class="headline">Join Pend</span>
-        </v-card-title>
-        <v-card-text>
-          <v-container>
-          <v-alert
-      text
-      dense
-      color="teal"
-      icon="mdi-clock-fast"
-      border="left"
-    >
-      Perfect! Our customer support staff witll call you shortly
-        to assist with your request. Below is a breakdown of your details
-        <br>
-        </v-alert>
+<v-container class="log">
+<div class="mt-12">
+<br>
+<br>
+<br>
+    <span class="headline">
+    </span>
+    <v-form
+    ref="form"
+    v-model="valid"
+    lazy-validation
+  >
+  <v-text-field
+      v-model="username"
+      :rules="emailRules"
+      label="Username"
+      color="#ffffff"
+      type="text"
+      dark
+      single-line
+      required
+    ></v-text-field> 
 
-            <v-row>
-              <v-col cols="12">
-                <v-text-field v-model='email' label="Email*" type="text" required></v-text-field>
-              </v-col>
-              <v-col cols="12">
-                <v-text-field v-model='username' label="Username*" required></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6">
-                <v-text-field v-model='password' label="Password*" type="password" required></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6">
-                <v-text-field v-model='confirmpass' label="Confirm Password*" type="password" required></v-text-field>
-              </v-col>
-               <v-col cols="12">
-              <v-btn
-          color="#E20A0AFF"
-          dark
-          tile
-          x-large
-          block
-          @click="loading = true">
-          Start Writing
-          </v-btn>
-          </v-col>
-            </v-row>
-          </v-container>
-          <small>*indicates required field</small>
-        </v-card-text>
-      </v-card>
-  </v-row>
+    <v-text-field
+      v-model="email"
+      :rules="emailRules"
+      label="Email Address"
+      color="#ffffff"
+      type="email"
+      dark
+      single-line
+      required
+    ></v-text-field>      
+<v-text-field
+      v-model="password"
+      :rules="passwordRules"
+      label="Password"
+      :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+      :type="show1 ? 'text' : 'password'"
+      color="#ffffff"
+      @click:append="show1 = !show1"
+      single-line
+      dark
+      required
+    ></v-text-field>
+    <v-text-field
+      v-model="password"
+      :rules="passwordRules"
+      label="Confirm Password"
+      :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+      :type="show1 ? 'text' : 'password'"
+      color="#ffffff"
+      @click:append="show1 = !show1"
+      single-line
+      dark
+      required
+    ></v-text-field>
+    <v-btn
+      class="mt-4"
+      color="#E20A0AFF"
+      tile
+      dark
+      x-large
+      block
+      @click='login'
+    >
+      REGISTER
+    </v-btn>
+    </v-form>
+  <div>
+    <p>Alredy have an account? <router-link
+    to="/login"
+    class="text-center"
+    >
+    Login
+    </router-link> 
+</p>
+  </div>
+  </div>
+    </v-container>
+
 </template>
 
 <script>
-import axios from 'axios'
 
   export default {
+    components: {
+    },
     data: () => ({
       loading: false,
-      username: null,
       email: null,
       password: null,
-      confirmpass: null
+      valid: true,
+      show1: false,
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      ],
+      passwordRules: [
+        v => !!v || 'Password is Required'
+      ]
     }),
-     watch: {
-      loading (val) {
-        if (!val) return
-        setTimeout(() => (this.loading = false), 600000)
+    methods: {
+       validate () {
+        this.$refs.form.validate()
+      },
+      login () {
+        this.validate()
+        if (!this.valid) {
+        } else {
+        }
       },
     },
-  methods: {
-      register () {
-          axios.post("http://localhost:3000/join", {
-              email: this.email,
-              username: this.username,
-              password: this.password
-          })
-          .then((res) => {
-              console.log(res)
-          })
-      }
+    mounted () {
+      this.validate()
+    }
   }
-}
 </script>
+
+<style scoped>
+
+a[data-v-26084dc2] {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none
+}
+
+.v-messages.theme--dark.error--text{
+    color: #ffffff !important;
+}
+
+.v-application .error--text {
+    color: #f1f1f1 !important;
+    caret-color: #f1f1f1 !important;
+}
+
+.v-input__control {
+    color: #f1f1f1 !important;
+    caret-color: #f1f1f1 !important;
+}
+
+.log {
+  background-color: #B71C1CFF;
+  min-height: 100vh;
+  max-height: auto
+}
+</style>

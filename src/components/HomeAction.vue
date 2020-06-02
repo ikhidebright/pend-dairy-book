@@ -1,5 +1,5 @@
 <template>
-<div class=""
+<div class="action">
 <v-row class='' no-gutters>
  <v-col class="acc">
           <v-btn
@@ -12,6 +12,7 @@
           Log in
           </v-btn>
           </v-col>
+
            <v-col class="">
           <v-btn
           color="#E20A0AFF"
@@ -36,6 +37,12 @@
 </script>
 
 <style scoped>
+
+.action {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
 
 .acc {
     height: 5vh

@@ -20,7 +20,6 @@
       label="Email Address"
       color="#ffffff"
       type="email"
-      prepend-inner-icon="mdi-email"
       dark
       single-line
       required
@@ -29,7 +28,6 @@
       v-model="password"
       :rules="passwordRules"
       label="Password"
-      prepend-inner-icon="mdi-lock"
       :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
       :type="show1 ? 'text' : 'password'"
       color="#ffffff"
@@ -56,14 +54,25 @@
       LOGIN
     </v-btn>
     </v-form>
+
   <router-link
     to="recover"
-    class="mt-4"
+    class="text-center"
     >
     Forgot Password?
     </router-link> 
+  <div>
+    <p>Don't have an account? <router-link
+    to="/register"
+    class="text-center"
+    >
+    Create One
+    </router-link> 
+</p>
+  </div>
   </div>
     </v-container>
+
 </template>
 
 <script>
@@ -102,23 +111,30 @@
   }
 </script>
 
-<style>
-a {
-    color: #fff;
+<style scoped>
+
+a[data-v-26084dc2] {
+    color: #ffffff;
+    text-decoration: none;
 }
 
-div.v-messages.theme--dark.error--text{
+a {
+    color: #ffffff;
+    text-decoration: none
+}
+
+.v-messages.theme--dark.error--text{
     color: #ffffff !important;
 }
 
 .v-application .error--text {
     color: #f1f1f1 !important;
-    caret-color: #ff5252 !important;
+    caret-color: #f1f1f1 !important;
 }
 
 .v-input__control {
     color: #f1f1f1 !important;
-    caret-color: #ff5252 !important;
+    caret-color: #f1f1f1 !important;
 }
 
 .log {

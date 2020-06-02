@@ -22,6 +22,7 @@ export default {
 <style scoped>
 .homeM {
   min-height: 100vh;
-  max-height: auto
+  max-height: auto;
+  background-color: #B71C1CFF;
 }
 </style>

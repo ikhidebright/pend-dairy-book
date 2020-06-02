@@ -1,36 +1,24 @@
 <template>
-<div class=""
-  <v-card
-    color="#B71C1CFF"
-    class="home"
-    dark
-    flat
-    tile
-  >
+<div class="card">
     <v-window v-model="onboarding">
       <v-window-item
       >
         <v-card
           color="transparent"
           flat
+          dark
+          class="pt-12"
         >
-        <v-container>
+        <v-container class="mt-12">
           <v-row
             no-gutters
-            class="fill-height mt-12"
-            align="center"
+            class="fill-height mt-5"
             justify="center"
-            tag="v-card-text" 
           >
-          <v-col
-          class="mt-12"
-          sm="3"
-          md="3"
-          xs="3"
-          >
+          <div class="mt-12">
             <h2 class='logo mt-12'>Pend</h2>
-            </v-col>
-            </v-row>
+          </div>
+          </v-row>
             </v-container>
         </v-card>
       </v-window-item>
@@ -40,12 +28,13 @@
         <v-card
           color="transparent"
           flat
+          dark
+          class="pt-12"
         >
         <v-container>
           <v-row
             no-gutters
             class="fill-height mt-12"
-            tag="v-card-text" 
           >
           <img :src="require('@/assets/pic.jpg')" class="img"/>
             <h2 class='head'>Your Private Journals</h2>
@@ -59,12 +48,13 @@
         <v-card
           color="transparent"
           flat
+          dark
+          class="pt-12"
         >
         <v-container>
           <v-row
             no-gutters
             class="fill-height mt-12"
-            tag="v-card-text" 
           >
           <img :src="require('@/assets/pic.jpg')" class="img"/>
             <h2 class='head'>Rich Entries</h2>
@@ -73,34 +63,7 @@
             </v-container>
         </v-card>
       </v-window-item>
-    </v-window> 
-     <!-- <v-row
-            class="fill-height"
-            align="center"
-            justify="center"
-            tag="v-card-text" 
-          >
-      <v-item-group
-        v-model="onboarding"
-        class="text-center"
-        mandatory
-      >
-        <v-item
-          v-for="n in length"
-          :key="`btn-${n}`"
-          v-slot:default="{ active, toggle }"
-        >
-          <v-btn
-            :input-value="active"
-            icon
-            @click="toggle"
-          >
-            <v-icon>mdi-record</v-icon>
-          </v-btn>
-        </v-item>
-      </v-item-group>
-      </v-row>   -->  
-  </v-card>
+    </v-window>  
   </div>
 </template>
 
@@ -139,6 +102,16 @@
 
 <style scoped>
 
+.bigLogo {
+  margin-top: 10vh;
+}
+
+.card {
+  min-height: 90vh;
+  max-height: auto;
+  color: white
+}
+
 .home {
   height: 92vh;
 }
@@ -154,7 +127,8 @@
 
 .logo {
     font-family: 'Pacifico'; 
-    font-size: 8rem
+    font-size: 8rem;
+    margin-top: 10% !important;
 }
 
 p {
