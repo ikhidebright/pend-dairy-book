@@ -2,26 +2,28 @@
   <v-bottom-navigation
     v-model="bottomNav"
     dark
+    fixed
+    bottom
     shift
   >
     <v-btn>
-      <span>Video</span>
-      <v-icon>mdi-television-play</v-icon>
+      <span>Pens</span>
+      <v-icon>mdi-book-open-page-variant</v-icon>
     </v-btn>
 
     <v-btn>
-      <span>Music</span>
-      <v-icon>mdi-music-note</v-icon>
+      <span>Favorite</span>
+      <v-icon>mdi-heart</v-icon>
     </v-btn>
 
     <v-btn>
-      <span>Book</span>
-      <v-icon>mdi-book</v-icon>
+      <span>Add Pen</span>
+      <v-icon>mdi-book-plus</v-icon>
     </v-btn>
 
     <v-btn>
-      <span>Image</span>
-      <v-icon>mdi-image</v-icon>
+      <span>Account</span>
+      <v-icon>mdi-face</v-icon>
     </v-btn>
   </v-bottom-navigation>
 </template>
