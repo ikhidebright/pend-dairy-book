@@ -1,7 +1,6 @@
 <template>
-  <div class="about">
+  <div class="pens">
   <Head />
-  <br>
   <Pen />
   <Pen />
   <Pen />
@@ -23,4 +22,10 @@ export default {
 </script>
 
 <style scoped>
+.pens {
+  background: rgb(241,241,241);
+  background: linear-gradient(162deg, rgba(241,241,241,1) 49%, rgba(210,210,210,1) 49%);
+  min-height: 100vh;
+  max-height: auto;
+}
 </style>
