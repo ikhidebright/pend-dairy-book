@@ -6,6 +6,7 @@
     max-width="350"
     :elevation="hover ? 24 : 6"
     shaped
+    to="/"
     flat
     light
   >
