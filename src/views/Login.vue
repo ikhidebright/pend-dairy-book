@@ -99,6 +99,7 @@
         this.$refs.form.validate()
       },
       login () {
+        this.$router.push('/pens')
         this.validate()
         if (!this.valid) {
         } else {

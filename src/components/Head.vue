@@ -1,16 +1,16 @@
 <template>
   <nav>
   <v-btn 
-      color='blue'
+      color='#B71C1CFF'
       dark
       icon
-      Small
+      x-large
       @click="drawer = !drawer"
       >
-        <v-icon>mdi-pencil</v-icon>
+        <v-icon>mdi-account-circle</v-icon>
       </v-btn>
     
-    <v-navigation-drawer v-model="drawer" app class="indigo" dark>
+    <v-navigation-drawer v-model="drawer" app color="#B71C1CFF" dark>
       <v-layout column align-center>
         <v-flex class="mt-5">
           <v-avatar size="100">
