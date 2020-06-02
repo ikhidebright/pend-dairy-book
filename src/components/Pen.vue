@@ -11,7 +11,7 @@
     light
   >
     <v-card-title class="mb-n7">
-      <p class="display-1">Toothbrush</p>
+      <p class="title">Toothbrush</p>
       <v-spacer></v-spacer>
     <!-- <v-btn 
       color='blue'
@@ -62,7 +62,7 @@
 </template>
 
 <style scoped>
-.display-1 {
+.title {
     font-family: 'Fredoka One' !important;
 }
 </style>
