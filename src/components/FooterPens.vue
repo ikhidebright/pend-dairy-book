@@ -5,6 +5,8 @@
     fixed
     bottom
     shift
+    :value="activeBtn"
+    color="red lighten-1"
   >
     <v-btn>
       <span>Pens</span>
@@ -16,7 +18,7 @@
       <v-icon>mdi-heart</v-icon>
     </v-btn>
 
-    <v-btn>
+    <v-btn to="/pad">
       <span>Add Pen</span>
       <v-icon>mdi-book-plus</v-icon>
     </v-btn>
@@ -33,6 +35,7 @@
     data () {
       return {
         bottomNav: 3,
+        activeBtn: 1,
       }
     },
 
