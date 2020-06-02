@@ -47,8 +47,8 @@ export default {
     return {
       drawer: false,
       items: [
-        { title: 'Dashboard', icon: 'mdi-view-grid', route: '/dashboard' },
-        { title: 'My Projects', icon: 'mdi-folder', route: '/projects' },
+        { title: 'Pens', icon: 'mdi-view-grid', route: '/dashboard' },
+        { title: 'Add Pen', icon: 'mdi-folder', route: '/projects' },
         { title: 'Team', icon: 'mdi-account', route: '/team' }
       ]
     };
